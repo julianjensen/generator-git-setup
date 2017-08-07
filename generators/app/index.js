@@ -7,14 +7,17 @@
 "use strict";
 
 const
-    Yeoman   = require( 'yeoman-generator' );
+    Generator = require( 'yeoman-generator' );
 
-module.exports = class extends Yeoman {
+module.exports = class extends Generator {
+
     /**
+     * @param args
+     * @param opts
      */
-    constructor()
+    constructor( args, opts )
     {
-        super();
+        super( args, opts );
         this.option( 'commit', {
             type: String, required: false, alias: 'c',
             desc: 'Commit message, optional'
@@ -23,6 +26,8 @@ module.exports = class extends Yeoman {
             type: String, required: true, alias: 'r',
             desc: 'Remote repository directory'
         } );
+
+        this.spawnCommandSync = ( com, args ) => console.log( `running: '${com} with [ ${args.join( ', ' )}` );
     }
 
     /**
