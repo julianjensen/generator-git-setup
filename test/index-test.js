@@ -7,16 +7,21 @@ const
     assert = require( 'yeoman-assert' ),
     expect = require( 'chai' ).expect;
 
+let tmpDir;
+
 describe( 'generator-git-setup', function() {
 
     before( function() {
-        helpers.run( join( __dirname, "../generators/app" ) )
+        return helpers.run( join( __dirname, "../generators/app" ) )
+            .inTmpDir( function( dir ) { tmpDir = dir; } )
             .withOptions( { skipInstall: true, commit: 'Initial commit', repository: 'some-repo' } );
     } );
 
     it( 'should do its thing', function() {
         assert.file( '.git' );
-        expect( fs.statSync( join( '.', '.git' ) ) ).to.exist;
+        assert.file( '.git/config' );
+        console.log( fs.readFileSync( '.git/config', 'utf8' ) );
+        // expect( fs.statSync( join( '.', '.git' ) ) ).to.exist;
     } );
 
 } );

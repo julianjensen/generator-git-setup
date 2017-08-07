@@ -26,8 +26,6 @@ module.exports = class extends Generator {
             type: String, required: true, alias: 'r',
             desc: 'Remote repository directory'
         } );
-
-        this.spawnCommandSync = ( com, args ) => console.log( `running: '${com} with [ ${args.join( ', ' )}` );
     }
 
     /**
