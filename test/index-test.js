@@ -2,10 +2,8 @@
 
 const
     join = require( 'path' ).join,
-    fs = require( 'fs' ),
     helpers = require( 'yeoman-test' ),
-    assert = require( 'yeoman-assert' ),
-    expect = require( 'chai' ).expect;
+    assert = require( 'yeoman-assert' );
 
 let tmpDir;
 
@@ -20,8 +18,6 @@ describe( 'generator-git-setup', function() {
     it( 'should do its thing', function() {
         assert.file( '.git' );
         assert.file( '.git/config' );
-        console.log( fs.readFileSync( '.git/config', 'utf8' ) );
-        // expect( fs.statSync( join( '.', '.git' ) ) ).to.exist;
     } );
 
 } );
