@@ -28,7 +28,7 @@
         "git"
     ],
     "dependencies": {
-        "yeoman-generator": "^1.1.1"
+        "yeoman-generator": "^2.0.5"
     },
     "devDependencies": {
         "chai": "^4.1.1",
