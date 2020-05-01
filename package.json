@@ -1,40 +1,44 @@
 {
-    "name": "generator-git-setup",
-    "version": "1.0.0",
-    "description": "Creates a new .git structure and initialization for a project",
-    "license": "MIT",
-    "main": "generators/app/index.js",
-    "files": [
-        "generators"
-    ],
-    "repository": "https://github.com/julianjensen/generator-git-setup",
-    "contributors": [
-        {
-            "name": "Julian Jensen",
-            "email": "jjdanois@gmail.com",
-            "url": "https://github.com/julianjensen"
-        }
-    ],
-    "scripts": {
-        "test": "istanbul cover node_modules/mocha/bin/_mocha -- ./test/"
-    },
-    "keywords": [
-        "yeoman-generator",
-        "boilerplate",
-        "node",
-        "starter",
-        "yeoman",
-        "plugin",
-        "git"
-    ],
-    "dependencies": {
-        "yeoman-generator": "^1.1.1"
-    },
-    "devDependencies": {
-        "chai": "^4.1.1",
-        "istanbul": "^0.4.5",
-        "mocha": "^3.5.0",
-        "yeoman-assert": "^3.0.0",
-        "yeoman-test": "^1.7.0"
+  "name": "generator-git-setup",
+  "version": "1.0.0",
+  "description": "Creates a new .git structure and initialization for a project",
+  "license": "MIT",
+  "main": "generators/app/index.js",
+  "files": [
+    "generators"
+  ],
+  "repository": "https://github.com/julianjensen/generator-git-setup",
+  "contributors": [
+    {
+      "name": "Julian Jensen",
+      "email": "jjdanois@gmail.com",
+      "url": "https://github.com/julianjensen"
     }
+  ],
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- ./test/",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "boilerplate",
+    "node",
+    "starter",
+    "yeoman",
+    "plugin",
+    "git"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^1.1.1",
+    "snyk": "^1.316.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.0",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "snyk": true
 }
